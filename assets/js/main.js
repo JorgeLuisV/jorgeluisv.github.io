@@ -18,12 +18,13 @@ class Main{
         this.galleryListener()
     }
 
-    static setInfo() {
+    setInfo() {
         const currDate = new Date(),
-            years = currDate.getFullYear() - 2015;
+            years = currDate.getFullYear() - 2015,
+            cdate = new Date()
         
         document.querySelector('#about .years').innerHTML = years
-        document.querySelector('.footer span:last-child').innerHTML = 'Copyright © 2020 Jorge Vásquez'
+        document.querySelector('.footer span:last-child').innerHTML = `Copyright © ${cdate.getFullYear()} Jorge Vásquez`
     }
 
     initAOS() {
@@ -123,6 +124,16 @@ class Main{
             this.images =  {
                 type: imgType,
                 data: [{
+                            id: 'mri',
+                            src: `./assets/images/mri_home${imgType}.png`,
+                            thumb: `./assets/images/mri_home${imgType}.png`,
+                            subHtml: "<h4>Módulo Financiero de Inversiones</h4><p>El módulo provee de información en actualizada sobre las movimientos financieros de las inversiones.</p>"
+                        }, {
+                            id: 'mrp',
+                            src: `./assets/images/mrp_home${imgType}.png`,
+                            thumb: `./assets/images/mrp_home${imgType}.png`,
+                            subHtml: "<h4>Módulo Financiero de Inversiones</h4><p>El módulo provee de información en actualizada sobre las movimientos financieros de las inversiones.</p>"
+                        }, {
                             id: 'bgadmin',
                             src: `./assets/images/bgadmin_reservas${imgType}.png`,
                             thumb: `./assets/images/bgadmin_reservas${imgType}.png`,
@@ -330,5 +341,4 @@ class Main{
 
 (() => {
     const main = new Main()
-    console.log(main)
 })()
