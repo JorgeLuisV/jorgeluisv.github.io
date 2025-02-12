@@ -20,7 +20,7 @@ class Main{
 
     setInfo() {
         const currDate = new Date(),
-            years = currDate.getFullYear() - 2015,
+            years = currDate.getFullYear() - 2016,
             cdate = new Date()
         
         document.querySelector('#about .years').innerHTML = years
